@@ -75,13 +75,16 @@ func DownloadFiles(pathname string) error {
 
 	fmt.Printf("year %d month %d day %d hour %d\n", now.Year(), now.Month(), now.Day(), now.Hour())
 	// for year := 2012; year <= now.Year(); year++ {
-	for year := now.Year(); year >= 2011; year-- {
-		endMonth := time.December
+	//for year := now.Year(); year >= 2011; year-- {
+	for year := 2021; year >= 2011; year-- {
+		//endMonth := time.December
+		endMonth := time.November
 		if year == now.Year() {
 			endMonth = now.Month()
 		}
 
-		for month := time.January; month <= endMonth; month++ {
+		//for month := time.January; month <= endMonth; month++ {
+		for month := time.November; month <= endMonth; month++ {
 			endDay := daysInMonth(year, month)
 			if year == now.Year() && month == now.Month() {
 				endDay = now.Day() - 1
