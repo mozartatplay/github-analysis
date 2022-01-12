@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/benfred/github-analysis/config"
-	"github.com/benfred/github-analysis/githubarchive"
+	"github.com/mozartatplay/github-analysis/config"
+	"github.com/mozartatplay/github-analysis/githubarchive"
 )
 
 func main() {
