@@ -73,9 +73,9 @@ func daysInMonth(year int, m time.Month) int {
 func DownloadFiles(pathname string) error {
 	now := time.Now()
 
-	fmt.Printf("year %d month %d day %d hour %d\n", now.Year(), now.Month(), now.Day(), now.Hour())
+	// fmt.Printf("year %d month %d day %d hour %d\n", now.Year(), now.Month(), now.Day(), now.Hour())
 	// for year := 2012; year <= now.Year(); year++ {
-	//for year := now.Year(); year >= 2011; year-- {
+	// for year := now.Year(); year >= 2011; year-- {
 	for year := 2021; year >= 2011; year-- {
 		//endMonth := time.December
 		endMonth := time.November
@@ -83,7 +83,7 @@ func DownloadFiles(pathname string) error {
 			endMonth = now.Month()
 		}
 
-		//for month := time.January; month <= endMonth; month++ {
+		// for month := time.January; month <= endMonth; month++ {
 		for month := time.November; month <= endMonth; month++ {
 			endDay := daysInMonth(year, month)
 			if year == now.Year() && month == now.Month() {
@@ -92,6 +92,7 @@ func DownloadFiles(pathname string) error {
 
 			for day := 1; day <= endDay; day++ {
 				for hour := 0; hour < 24; hour++ {
+					fmt.Printf("year %d month %d day %d hour %d\n",year,month,day,hour)
 					MaybeDownloadFile(pathname, year, int(month), day, hour, false)
 				}
 			}
